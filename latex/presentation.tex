@@ -210,16 +210,32 @@ then we have a list of geometric operation on each primitive
 \end{frame}
 
 \subsection{Metric}
+\begin{frame}{Metric}
 We also want to add method to check the quality off the output mesh
 \begin{itemize}
     \item Properties Check (closed,connected,triangulated...)
     \item Correspondance between input and output
 \end{itemize}
-To check the Correspondance between mesh, we can compare bounding box of each labelled elements.
-\begin{frame}{Metric}
+To check the Correspondance between mesh, we can compare 
+bounding box of each labelled elements.
+
+\begin{table}[h]
+    \centering
+    \caption{Bounding Box value}
+    \begin{tabular}{|c|c|c|}
+        \hline
+         \% of marker correct & Three Zones & ACJasmin \\
+        \hline
+        <5\% & 22/57 & 3/82 \\
+        between 5 and 10 \% & 11/57 & 7/82 \\
+        between 10 and 20 \% & 13/57  & 9/82 \\
+        \hline
+    \end{tabular}
+\end{table}
     
 \end{frame}
 
+\
 \section{Implementation}
 \subsection{Contribution to Ktirio library}
 \begin{frame}
