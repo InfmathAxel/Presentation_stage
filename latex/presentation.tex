@@ -102,13 +102,13 @@ Supervisor: Vincent Chabannes, Pierre Alliez, Florent Lafarge
 \subsection{Files Format}
 \begin{frame}{File Format}
 \begin{itemize}
-    \item IFC 
-    \item CityGML
-    \item STL 
-    \item OBJ
-    \item OFF
-    \item Ply
-    \item Msh
+    \item IFC : Standart for buillding data modeling,similar to class oriented code
+    \item CityGML : 3D format for city modeling with representation of geographic details
+    \item STL : 3D Modeling format 
+    \item OBJ :A standard file format for 3D models
+    \item OFF :  A file format for 3D mesh data
+    \item PLY :  A file format for 3D mesh data,stocking the cloud point of the mesh 
+    \item MSH : A file format for mesh data use by GMSH software
 \end{itemize}
 \end{frame}
 
@@ -125,25 +125,97 @@ Supervisor: Vincent Chabannes, Pierre Alliez, Florent Lafarge
 \end{frame}
 
 \begin{frame}{Data}
-    
+    The following Data were given by Vincent Chabannes
+    \begin{figure}
+        \begin{minipage}{0.33\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{../image/3zones_stl.png}
+        \end{minipage}%
+        \begin{minipage}{0.33\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{../image/label_three_zone.png}
+        \end{minipage}%
+        \caption{Three zones mesh}
+    \end{figure}
+    \begin{figure}
+        \begin{minipage}{0.33\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{../image/jasmin_stl.png}
+        \end{minipage}%
+        \begin{minipage}{0.33\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{../image/ACJasmin.png}
+        \end{minipage}%
+        \caption{ACJasmin mesh}
+    \end{figure}
 \end{frame}
 
 
 \section{Methodology}
 \subsection{Kinetic}
 \begin{frame}{Kinetic}
-    
+We get information from a INRIA report (citer le rapport)
+Kinetic algorithm is an geometric algorithm generate 3D mesh from a point clouds,it uses  geometric primitive with an energy based model to fit the primitives to the model.
+
+Energy formule: 
+\newline
+\begin{center}
+    $        U(x) = w_f U_f(x) + w_s U_s(x) + w_c U_c(x)       $
+\end{center}
+
+to calculate the best primitive to fit the mesh.
+then we have a list of geometric operation on each primitive
+\includegraphics[scale=0.35]{../image/primitives_operation.png}
 \end{frame}
 
 \subsection{preprocessing}
 \begin{frame}{preprocessing}  
+    To improve Kinetic outcome we pre-process the mesh :
+    \begin{itemize}
+        \item Isotropic remeshing of the mesh
+        \item Unified and regularize the mesh with grid simplify
+        \item Fix self Intersection 
+        \item Calcul normals
+    \end{itemize}
 \end{frame}
 
-\subsection{labelling}
+\subsection{Labelling}
 \begin{frame}{Labelling}
+    \textbf{Issue}: Inria developed a method to preserve the semantic information of IFC elements, but it has not yet been implemented in CGAL.
+
+     Two potential solutions:
+    \begin{itemize}
+        \item Modify the Kinetic Solver to recognize and utilize markers on each point used to form a shape.
+        \item Compare the input and output meshes to apply the same markers to the closest faces.
+    \end{itemize}
 \end{frame}
 
-\subsection*{Metric}
+\begin{frame}{Labelling}
+    Exemple of result of second solutions:
+    \begin{figure}
+        \centering
+        \begin{minipage}{0.5\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{../image/ACJasmin.png}
+            \caption{Input Mesh}
+            \label{fig:input_mesh}
+        \end{minipage}%
+        \begin{minipage}{0.5\textwidth}
+            \centering
+            \includegraphics[width=1.05\textwidth]{../image/ACjasmin_label.png}
+            \caption{Output Mesh}
+            \label{fig:output_mesh}
+        \end{minipage}
+    \end{figure}
+\end{frame}
+
+\subsection{Metric}
+We also want to add method to check the quality off the output mesh
+\begin{itemize}
+    \item Properties Check (closed,connected,triangulated...)
+    \item Correspondance between input and output
+\end{itemize}
+To check the Correspondance between mesh, we can compare bounding box of each labelled elements.
 \begin{frame}{Metric}
     
 \end{frame}
