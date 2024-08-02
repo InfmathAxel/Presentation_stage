@@ -4,15 +4,14 @@
 \usepackage[utf8]{inputenc}
 \usepackage{chronosys}
 \usepackage{graphicx}
-\usepackage{multicol} % Pour les colonnes multiples
+\usepackage{multicol} 
 
 \begin{document}
 
-% Page de titre avec les logos
 \begin{frame}
 \frametitle{KINETIC AND BUILDING LOD2}
 \begin{figure}
-    % Première ligne de logos
+
     \begin{minipage}{0.33\textwidth}
         \centering
         \includegraphics[width=0.6\textwidth]{../image/logo_irma.png}
@@ -26,9 +25,9 @@
         \includegraphics[width=0.6\textwidth]{../image/logo-ufr-mathinfo-unistra-1.jpg}
     \end{minipage}
     
-    \vspace{0.5cm} % Espacement entre les deux lignes
+    \vspace{0.5cm} 
     
-    % Deuxième ligne de logos
+   
     \begin{minipage}{0.33\textwidth}
         \centering
         \includegraphics[width=0.6\textwidth]{../image/logoCemosis-square-e1469167314407.png}
@@ -68,7 +67,7 @@ Supervisor: Vincent Chabannes, Pierre Alliez, Florent Lafarge
     \subsection{Issue with Kinetic Algorithm}
 \end{frame}
 
-% Objectives
+
 \begin{frame}{Objectives}
     \subsection{Objectives}
     \begin{itemize}
@@ -79,7 +78,7 @@ Supervisor: Vincent Chabannes, Pierre Alliez, Florent Lafarge
     \end{itemize}
 \end{frame}
 
-% CGAL
+
 \begin{frame}{CGAL}
     \subsection{CGAL}
     \begin{itemize}
@@ -134,18 +133,18 @@ Supervisor: Vincent Chabannes, Pierre Alliez, Florent Lafarge
         \begin{minipage}{0.33\textwidth}
             \centering
             \includegraphics[width=0.9\textwidth]{../image/label_three_zone.png}
-        \end{minipage}%
+        \end{minipage}
         \caption{Three zones mesh}
     \end{figure}
     \begin{figure}
         \begin{minipage}{0.33\textwidth}
             \centering
             \includegraphics[width=0.9\textwidth]{../image/jasmin_stl.png}
-        \end{minipage}%
+        \end{minipage}
         \begin{minipage}{0.33\textwidth}
             \centering
             \includegraphics[width=0.9\textwidth]{../image/ACJasmin.png}
-        \end{minipage}%
+        \end{minipage}
         \caption{ACJasmin mesh}
     \end{figure}
 \end{frame}
@@ -232,10 +231,28 @@ bounding box of each labelled elements.
         \hline
     \end{tabular}
 \end{table}
+\end{frame}
+
+\begin{frame}
+    
+    \begin{figure}
+    \includegraphics[width=0.9\textwidth]{../image/3_zones_input_bounding_box.png}
+    \includegraphics[width=0.9\textwidth]{../image/3zone_output_bounding_box.png}
+    \caption{Three zones Bounding Boxe comparaison}
+    \end{figure}
     
 \end{frame}
 
-\
+\begin{frame}
+    
+    \begin{figure}
+    \includegraphics[width=0.4\textwidth]{../image/ACJasmin_input_bounding_box.png}
+    \includegraphics[width=0.47\textwidth]{../image/ACjasmin_output_bounding_box.png}
+    \caption{ACJasmin Bounding Boxe comparaison}
+    \end{figure}
+    
+\end{frame}
+
 \section{Implementation}
 \subsection{Contribution to Ktirio library}
 \begin{frame}
