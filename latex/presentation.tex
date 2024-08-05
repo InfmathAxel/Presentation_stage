@@ -6,6 +6,7 @@
 \usepackage{graphicx}
 \usepackage{multicol} 
 
+
 \begin{document}
 
 \begin{frame}
@@ -78,10 +79,61 @@ Supervisor: Vincent Chabannes, Pierre Alliez, Florent Lafarge
 \end{frame}
 
 \subsection{Issue with Kinetic Algorithm}
-\begin{frame}{Issue with Kinetic Algorithm}
-   
+\begin{frame}{Issue with orientation}
+    \begin{figure}
+        \centering
+        \begin{minipage}[b]{0.3\textwidth}
+          \centering
+          \includegraphics[width=\textwidth]{../image/cube_3faces.png}
+          \caption{Cube not oriented}
+        \end{minipage}%
+        \begin{minipage}[b]{0.3\textwidth}
+          \centering
+          \includegraphics[width=\textwidth]{../image/cube_5faces.png}
+          \caption{Cube badly oriented}
+        \end{minipage}%
+        \begin{minipage}[b]{0.3\textwidth}
+          \centering
+          \includegraphics[width=\textwidth]{../image/bon_cube.png}
+          \caption{Cube oriented by CGAL}
+        \end{minipage}
+      \end{figure}
 \end{frame}
 
+\begin{frame}{Self Intersection issue}
+    \begin{figure}
+        \centering
+        \begin{minipage}[b]{0.23\textwidth}
+          \centering
+          \includegraphics[width=\textwidth]{../image/2cubes.png}
+          \caption{Two cube self intercting}
+        \end{minipage}\hfill
+        \begin{minipage}[b]{0.23\textwidth}
+          \centering
+          \includegraphics[width=\textwidth]{../image/3cubes.png}
+          \caption{Two cubes intersecting a third one}
+        \end{minipage}\hfill
+        \begin{minipage}[b]{0.23\textwidth}
+          \centering
+          \includegraphics[width=\textwidth]{../image/3cubes_tresproche.png}
+          \caption{Three cubes self intersecting}
+        \end{minipage}\hfill
+        \begin{minipage}[b]{0.23\textwidth}
+          \centering
+          \includegraphics[width=\textwidth]{../image/5cubes.png}
+          \caption{Five cubes  intercting randomly}
+        \end{minipage}
+      \end{figure}    
+\end{frame}
+
+\begin{frame}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.4\textwidth]{../image/2_cubes_fixed.png}
+    \caption{Two Cubes fixed}
+  \end{figure}
+All other result in a execution error
+\end{frame}
 
 \begin{frame}{Objectives}
     \subsection{Objectives}
@@ -270,19 +322,72 @@ bounding box of each labelled elements.
 
 \section{Implementation}
 \subsection{Contribution to Ktirio library}
-\begin{frame}
-    
+\begin{frame}{Function implemented}
+   \begin{itemize}
+    \item checkProperties{}
+    \item gridSimplify{}
+    \item remesh{}
+    \item  KSR{}
+   \end{itemize}
+
 \end{frame}
 
 \subsection{test}
 \begin{frame}{test}
+    \begin{itemize}
+        \item test on Surface Mesh Check
+        \item test on Kinetic algorithm
+        \item test on Point set class and manipulation function
+    \end{itemize}
 \end{frame}
 
 \section{Result}
 \subsection{Point cloud generation Result}
 \begin{frame}{Point cloud}
-    
+    \begin{figure}
+        \begin{minipage}{0.45\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{../image/3zones_stl.png}
+        \end{minipage}%
+        \begin{minipage}{0.45\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{../image/point_cloud.png}
+        \end{minipage}
+        \caption{Three zones mesh point cloud}
+    \end{figure}
 \end{frame}
+
+\begin{frame}
+    \begin{figure}
+        \begin{minipage}{0.45\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{../image/jasmin_stl.png}
+        \end{minipage}
+        \begin{minipage}{0.45\textwidth}
+            \centering
+            \includegraphics[width=0.9\textwidth]{../image/jasmin_ply.png}
+        \end{minipage}
+        \caption{ACJasmin mesh point cloud }
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Comparison of Kinetic Outcome}
+    \begin{figure}
+      \centering
+      \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../image/3zones_v2_1.png}
+        \caption{Old KSR outcome}
+      \end{minipage}
+      \hfill
+      \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../image/3zones_final.png}
+        \caption{New KSR outcome}
+      \end{minipage}
+    \end{figure}
+\end{frame}
+
 
 \subsection{Self Intersection Result}
 \begin{frame}{Self Intersection fixing}

@@ -1,0 +1,6 @@
+\frametitle{Function implemented}
+\begin{lstlisting}
+        boolcheckProperties(Meshtype &ktirio_mesh,const std::vector<propertyToCheck>& properties){}
+
+
+    \end{lstlisting}
