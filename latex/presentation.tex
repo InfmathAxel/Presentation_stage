@@ -35,11 +35,11 @@
     \end{minipage}%
     \begin{minipage}{0.33\textwidth}
         \centering
-        \includegraphics[width=0.6\textwidth]{../image/HiDALGO2 - logo - color - RGB.jpg}
+        \includegraphics[width=0.6\textwidth]{../image/HiDALGO2-logo.jpg}
     \end{minipage}%
     \begin{minipage}{0.33\textwidth}
         \centering
-        \includegraphics[width=0.6\textwidth]{../image/G_logo-inria-rouge-reduce_inr_logo_rouge_1080x608.jpg}
+        \includegraphics[width=0.6\textwidth]{../image/logo-inria-.jpg}
     \end{minipage}
     
 \end{figure}
@@ -351,7 +351,7 @@ bounding box of each labelled elements.
         \end{minipage}%
         \begin{minipage}{0.45\textwidth}
             \centering
-            \includegraphics[width=0.9\textwidth]{../image/point_cloud.png}
+            \includegraphics[width=0.9\textwidth]{../image/3zones_ply.png}
         \end{minipage}
         \caption{Three zones mesh point cloud}
     \end{figure}
@@ -388,15 +388,168 @@ bounding box of each labelled elements.
     \end{figure}
 \end{frame}
 
+\begin{frame}{Comparison of 3 Zone Results}
+\begin{figure}
+  \centering
+  \begin{minipage}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{../image/3zone_500_0.06.png}
+    \caption{3 Zone 500}
+  \end{minipage}\hfill
+  \begin{minipage}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{../image/3zones_45_0.06.png}
+    \caption{3 Zones 45}
+  \end{minipage}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}{Comparison of Jasmin Images}
+    \begin{figure}
+      \centering
+      \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../image/jasmin_ply.png}
+        \caption{Jasmin Ply}
+      \end{minipage}\hfill
+      \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../image/jasmin.png}
+        \caption{Jasmin Image}
+      \end{minipage}
+    \end{figure}
+    \end{frame}
 
 \subsection{Self Intersection Result}
 \begin{frame}{Self Intersection fixing}
-    
+    \begin{figure}
+        \centering
+        \begin{minipage}[b]{0.23\textwidth}
+          \centering
+          \includegraphics[width=\textwidth]{../image/2cubesksr.png}
+          \caption{Same result as intro}
+        \end{minipage}\hfill
+        \begin{minipage}[b]{0.23\textwidth}
+          \centering
+          \includegraphics[width=\textwidth]{../image/3cubesksr2.png}
+          \caption{Worked}
+        \end{minipage}\hfill
+        \begin{minipage}[b]{0.23\textwidth}
+          \centering
+          \includegraphics[width=\textwidth]{../image/3cubesksr.png}
+          \caption{Worked}
+        \end{minipage}\hfill
+        \begin{minipage}[b]{0.23\textwidth}
+          \centering
+          \includegraphics[width=\textwidth]{../image/5cubeoutcome.png}
+          \caption{Worked}
+        \end{minipage}
+      \end{figure}
 \end{frame}
 
-\subsection{Performance}
-\begin{frame}{Performance}
+\begin{frame}
+    \begin{figure}
+      \centering
+      \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../image/3zonerefine.png}
+        \caption{Refined Zones}
+      \end{minipage}\hfill
+      \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../image/3zones_not_refined.png}
+        \caption{Not Refined Zones}
+      \end{minipage}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Comparison of Refined and Not Refined Zones}
+    \begin{figure}
+      \centering
+      \begin{minipage}[b]{0.40\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../image/ACJAsmin_refine.png}
+        \caption{ACJAsmin Refined}
+      \end{minipage}\hfill
+      \begin{minipage}[b]{0.40\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../image/Jasmin_hole.png}
+        \caption{Jasmin Hole}
+      \end{minipage}
     
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+\begin{figure}
+\begin{minipage}[b]{0.40\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{../image/ACJasmin_not_refined.png}
+    \caption{ACJAsmin Not Refined}
+  \end{minipage}\hfill
+  \begin{minipage}[b]{0.40\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{../image/Jasmin_not_refined_roof.png}
+    \caption{Jasmin Not Refined Roof}
+  \end{minipage}
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}{Comparison of ACJASMIN Results}
+    \begin{figure}
+      \centering
+      \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../image/ACJASMIN2000_0.04_refine.png}
+        \caption{ACJASMIN Refined}
+      \end{minipage}\hfill
+      \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../image/ACJASMIN_2000_0.04.png}
+        \caption{ACJASMIN Not Refined}
+      \end{minipage}
+    \end{figure}
+    \end{frame}
+
+
+\subsection{Performance}
+\begin{frame}{Results from the Start of Internship and After Grid Simplify}
+
+    \begin{figure}
+      \centering
+      
+      % Première image : Avant simplification
+      \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../image/tzones.png}
+        \caption{Result from the start of internship. Shape detection took 124s and the kinetic space partition 0.2s. When compared to the size and the complexity of the meeting room mesh, it was kind of disappointing.}
+      \end{minipage}\hfill
+      
+      % Deuxième image : Après simplification
+      \begin{minipage}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../image/3zones_final.png}
+        \caption{Result after grid simplify. Execution time: 1.6s for shape detection and 1.1s for space partition.}
+      \end{minipage}
+    
+    \end{figure}
+    
+    \end{frame}
+\begin{frame}{Execution Time with Our Workflow on Three Zones}
+    \begin{table}
+        \centering
+        \begin{tabular}{lcccc}
+            Parameters & Default & min.region.size=2000 & min.region.size=500 & min.region.size=100 \\
+            Shape detection & 7.97s & 8.18s & 5.76s & 1.62s \\
+            Kinetic space partition & 0.22s & 0.22s & 0.36s & 1.35s \\
+            Total execution & 8.2s & 8.41s & 6.13s & 2.98s \\
+        \end{tabular}
+        \caption{Execution time with our workflow on Three Zones}
+        \label{tab:execution_time}
+    \end{table}
 \end{frame}
 
 \section{Conclusion}
