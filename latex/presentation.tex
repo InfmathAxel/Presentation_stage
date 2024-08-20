@@ -5,7 +5,7 @@
 \usepackage{chronosys}
 \usepackage{graphicx}
 \usepackage{multicol} 
-
+\usepackage{hyperref}
 
 \begin{document}
 
@@ -61,7 +61,15 @@ Supervisor: Vincent Chabannes, Pierre Alliez, Florent Lafarge
 
 \section{Introduction}
 \begin{frame}{Introduction}
+  In the context of developing energy simulation applications for buildings, there is a need for more sophisticated emulation tools.
+
+\begin{itemize}
+    \item Exa-MA Project : A French initiative under the Numpex project aimed at developing exascale applications for simulation.
+    \item Cemosis and Hidalgo2: Collaborating to port the Ktirio Urban Building application to exascale computing power.
+\end{itemize}
+
 \end{frame}
+
 
 \subsection{Context}
 \begin{frame}{Context}
@@ -220,7 +228,7 @@ All other result in a execution error
 \section{Methodology}
 \subsection{Kinetic}
 \begin{frame}{Kinetic}
-We get information from a INRIA report (citer le rapport)
+We get information from a INRIA report \cite{yu:hal-03767910}
 Kinetic algorithm is an geometric algorithm generate 3D mesh from a point clouds,it uses  geometric primitive with an energy based model to fit the primitives to the model.
 
 Energy formule: 
@@ -516,23 +524,22 @@ bounding box of each labelled elements.
 
 
 \subsection{Performance}
-\begin{frame}{Results from the Start of Internship and After Grid Simplify}
+\begin{frame}{Comparaison of performance}
 
     \begin{figure}
       \centering
       
-      % Première image : Avant simplification
-      \begin{minipage}[b]{0.48\textwidth}
+      \begin{minipage}[b]{0.40\textwidth}
         \centering
         \includegraphics[width=\textwidth]{../image/tzones.png}
-        \caption{Result from the start of internship. Shape detection took 124s and the kinetic space partition 0.2s. When compared to the size and the complexity of the meeting room mesh, it was kind of disappointing.}
+        \caption{Execution times 125s}
+       
       \end{minipage}\hfill
       
-      % Deuxième image : Après simplification
-      \begin{minipage}[b]{0.48\textwidth}
+      \begin{minipage}[b]{0.40\textwidth}
         \centering
         \includegraphics[width=\textwidth]{../image/3zones_final.png}
-        \caption{Result after grid simplify. Execution time: 1.6s for shape detection and 1.1s for space partition.}
+        \caption{Execution times 3s}
       \end{minipage}
     
     \end{figure}
@@ -541,25 +548,135 @@ bounding box of each labelled elements.
 \begin{frame}{Execution Time with Our Workflow on Three Zones}
     \begin{table}
         \centering
-        \begin{tabular}{lcccc}
-            Parameters & Default & min.region.size=2000 & min.region.size=500 & min.region.size=100 \\
+        \begin{tabular}{|l|c|c|c|c|}
+          \hline
+            Parameters & Default & mino=2000 & minp=500 & minp=100 \\
+            \hline
             Shape detection & 7.97s & 8.18s & 5.76s & 1.62s \\
+            \hline
             Kinetic space partition & 0.22s & 0.22s & 0.36s & 1.35s \\
+            \hline
             Total execution & 8.2s & 8.41s & 6.13s & 2.98s \\
+            \hline
         \end{tabular}
         \caption{Execution time with our workflow on Three Zones}
         \label{tab:execution_time}
     \end{table}
 \end{frame}
 
+\begin{frame}
+  \begin{table}
+    \centering
+    \caption{Execution time on ACJasmin}
+    \begin{tabular}{|l|c|c|c|c|}
+      \hline
+      default & minp=3000,dist=0.08 & minp=2000,dist=0.08 & minp=1200,dist=0.06 \\
+      \hline
+      407s & 58s & 39.8s & 31.5s \\
+      \hline
+      0.4s & 0.8s & 0.7s & 0.9s \\
+      \hline
+      407.5s & 58.8s & 40s & 32.5s \\
+      \hline
+    \end{tabular}
+    \label{tab:execution_times}
+    \end{table}
+\end{frame}
+
+
 \section{Conclusion}
 \begin{frame}{Conclusion}
-    
+  \begin{itemize}
+    \item From result overview: Better results and performance, but could not tried to apply FEM to the mesh.
+    \item From personnal overwiew: earned how to code with an unknown package and the importance of team communication.
+  \end{itemize}
 \end{frame}
 
 \section{Refereces}
-\begin{frame}{bib}
+\begin{frame}{references}
+  \begin{thebibliography}{99}
+
+    \bibitem{yu:hal-03767910}
+    Yu, M., Lafarge, F., Oesau, S., \& Hilaire, B. (2022).
+    \textit{Repairing geometric errors in 3D urban models with kinetic data structures}.
+    \textit{ISPRS Journal of Photogrammetry and Remote Sensing, 192}, 1-12.
+    \url{https://inria.hal.science/hal-03767910}
     
+    \bibitem{bauchet:hal-02924409}
+    Bauchet, J.-P., \& Lafarge, F. (2020).
+    \textit{Kinetic Shape Reconstruction}.
+    \textit{ACM Transactions on Graphics}.
+    \url{https://inria.hal.science/hal-02924409}
+    
+    \bibitem{cgal:eb-24a}
+    The CGAL Project. (2024).
+    \textit{CGAL User and Reference Manual (5.6.1)}.
+    CGAL Editorial Board.
+    \url{https://doc.cgal.org/5.6.1/Manual/packages.html}
+    
+    \bibitem{yu:hal-03621896}
+    Yu, M., \& Lafarge, F. (2022).
+    \textit{Finding Good Configurations of Planar Primitives in Unorganized Point Clouds}.
+    In \textit{CVPR 2022 - IEEE Conference on Computer Vision and Pattern Recognition}.
+    \url{https://inria.hal.science/hal-03621896}
+  \end{thebibliography}
+
+\end{frame}
+
+\begin{frame}
+  \begin{thebibliography}{widestlabel}
+    \bibitem{numpex2024}
+Numpex. (2024).
+\textit{Numpex Homepage}.
+\url{https://numpex.org/}
+
+\bibitem{cemosis2024}
+Cemosis. (2024).
+\textit{Cemosis Homepage}.
+\url{https://www.cemosis.fr/}
+
+\bibitem{hidalgo2024}
+Hidalgo2. (2024).
+\textit{Hidalgo2 Homepage}.
+\url{https://www.hidalgo2.eu/}
+
+\bibitem{ktirio2024}
+Ktirio. (2024).
+\textit{Ktirio Homepage}.
+\url{https://ktirio.fr/}
+
+\bibitem{titane2024}
+Inria Titane Team. (2024).
+\textit{Inria Titane Team Home Page}.
+\url{https://team.inria.fr/titane/team/}
+
+\end{thebibliography}
+\end{frame}
+
+\begin{frame}
+  \begin{thebibliography}{widestlabel}
+    \bibitem{cgal2024}
+  CGAL. (2024).
+  \textit{CGAL Homepage}.
+  \url{https://www.cgal.org/}
+
+  \bibitem{exam2024}
+Numpex. (2024).
+\textit{Numpex Exa-MA methods and algorithms for exascale}.
+\url{https://numpex.org/exama-methods-and-algorithms-for-exascale/}
+
+\bibitem{cgalksr2024}
+CGAL. (2024).
+\textit{User Manual for KSR}.
+\url{https://cgal.geometryfactory.com/CGAL/doc/master/Kinetic_surface_reconstruction/index.html}
+
+\bibitem{feelpp2024}
+Feel++ Project. (2024).
+\textit{User Manual Feel++ Toolboxes}.
+\url{https://docs.feelpp.org/toolboxes/latest/index.html}
+
+\end{thebibliography}
+
 \end{frame}
 
 \end{document}
