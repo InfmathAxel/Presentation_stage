@@ -143,8 +143,8 @@ Supervisor: Vincent Chabannes, Pierre Alliez, Florent Lafarge
 All other result in a execution error
 \end{frame}
 
+\subsection{Objectives}
 \begin{frame}{Objectives}
-    \subsection{Objectives}
     \begin{itemize}
         \item Check the validity of the Mesh
         \item Create a workflow for automatic generation using KSR Algorithm
@@ -153,9 +153,8 @@ All other result in a execution error
     \end{itemize}
 \end{frame}
 
-
+\subsection{CGAL}
 \begin{frame}{CGAL}
-    \subsection{CGAL}
     \begin{itemize}
         \item C++ library for geometric calculations, providing data structures for mesh generation and manipulation.
     \end{itemize}
@@ -270,7 +269,7 @@ then we have a list of geometric operation on each primitive
         \centering
         \begin{minipage}{0.5\textwidth}
             \centering
-            \includegraphics[width=0.9\textwidth]{../image/ACJasmin.png}
+            \includegraphics[width=0.9\textwidth]{../image/ACJasmin_1.png}
             \caption{Input Mesh}
             \label{fig:input_mesh}
         \end{minipage}%
@@ -330,13 +329,16 @@ bounding box of each labelled elements.
 
 \section{Implementation}
 \subsection{Contribution to Ktirio library}
-\begin{frame}{Function implemented}
-   \begin{itemize}
+\begin{frame}{}
+  \begin{itemize}
     \item checkProperties{}
     \item gridSimplify{}
     \item remesh{}
-    \item  KSR{}
-   \end{itemize}
+    \item KSR{}
+    \item IO function for off,ply,obj Files
+    \item Point set class
+    \item etc..
+  \end{itemize}
 
 \end{frame}
 
